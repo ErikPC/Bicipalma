@@ -4,7 +4,7 @@ public class Bicicleta implements Movil {
 
     private final int id;
 
-    Bicicleta(int id) {
+    public Bicicleta(int id) {
         this.id = id;
     }
 
@@ -12,7 +12,7 @@ public class Bicicleta implements Movil {
     public int getId() {
         return id;
     }
-
+    @Override
     public String toString() {
         return "La id de la bicleta es:" + getId();
     }
