@@ -12,8 +12,9 @@ public class Bicicleta implements Movil {
     public int getId() {
         return id;
     }
+
     @Override
     public String toString() {
-        return "La id de la bicleta es:" + getId();
+        return Integer.toString(getId());
     }
 }
