@@ -7,7 +7,8 @@ public class Anclaje {
     private boolean ocupado;
     private Movil bici;
 
-    Anclaje(){}
+    Anclaje() {
+    }
 
     boolean isOcupado() {
         return ocupado;
@@ -17,15 +18,17 @@ public class Anclaje {
         return bici;
     }
 
-    void anclarBici(Movil bici){
+    void anclarBici(Movil bici) {
         this.bici = bici;
         ocupado = true;
     }
-    void liberarBici(){
+
+    void liberarBici() {
         ocupado = false;
     }
+
     @Override
-    public String toString(){
-        return "La " + getBici() + "esta" + isOcupado();
+    public String toString() {
+        return isOcupado() ? "El anclajes esta ocupado por la bici " + getBici() : "No esta ocupado";
     }
 }
