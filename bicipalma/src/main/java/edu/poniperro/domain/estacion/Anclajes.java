@@ -4,59 +4,63 @@ import edu.poniperro.domain.bicicleta.Movil;
 
 public class Anclajes {
 
-    private Anclaje[] anclajes; 
+    private Anclaje[] anclajes;
 
-    Anclajes(int numAnclajes){
+    Anclajes(int numAnclajes) {
         this.anclajes = new Anclaje[numAnclajes];
         crearAnclaje();
     }
-    private void crearAnclaje(){
-        for (int i = 0; i < numAnclajes(); i++ ){
+
+    private void crearAnclaje() {
+        for (int i = 0; i < numAnclajes(); i++) {
             anclajes()[i] = new Anclaje();
         }
     }
 
-    Anclaje[] anclajes(){
+    Anclaje[] anclajes() {
         return this.anclajes;
     }
 
-    int numAnclajes(){
+    int numAnclajes() {
         return anclajes().length;
     }
 
-    void ocuparAnclaje(int anclaje , Movil bici ){
-            anclajes()[anclaje].anclarBici(bici);
+    void ocuparAnclaje(int anclaje, Movil bici) {
+        anclajes()[anclaje].anclarBici(bici);
     }
 
-    boolean isAnclajeOcupado(int anclaje){
+    boolean isAnclajeOcupado(int anclaje) {
         return anclajes()[anclaje].isOcupado();
     }
 
-    void liberarAnclaje(int anclaje ){
+    void liberarAnclaje(int anclaje) {
         anclajes()[anclaje].liberarBici();
     }
 
-    Movil getBiciAt(int anclaje){
+    Movil getBiciAt(int anclaje) {
         return anclajes()[anclaje].getBici();
     }
 
-    int seleccionarAnclaje(){
-        for (int i = 0 ; i <= numAnclajes(); i++){
-            if (!anclajes()[i].isOcupado()){
+    int seleccionarAnclaje() {
+        for (int i = 0; i < numAnclajes(); i++) {
+            if (!anclajes()[i].isOcupado()) {
                 return i;
             }
         }
         return -1;
     }
-    int seleccionarAnclajeOcupado(){
-        for (int i = 0 ; i <= numAnclajes(); i++){
-            if (anclajes()[i].isOcupado()){
+
+    int seleccionarAnclajeOcupado() {
+        for (int i = 0; i < numAnclajes(); i++) {
+            if (anclajes()[i].isOcupado()) {
                 return i;
             }
         }
         return -1;
     }
-    public String toString(){
-        return  "La bicicleta ha sido liberada" ;
+
+    @Override
+    public String toString() {
+        return "La bicicleta ha sido liberada";
     }
 }
